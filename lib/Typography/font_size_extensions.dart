@@ -51,3 +51,48 @@ extension FontSizeExtensions on Text {
   /// font-size: 128px, line-height: 1. Tailwind: `text-9xl`.
   Text text9Xl() => mergeStyle(const TextStyle(fontSize: 128, height: 1));
 }
+
+/// Same Tailwind `font-size` scale as [FontSizeExtensions], but for raw
+/// [TextStyle] values instead of a [Text] widget — for spots that take a
+/// [TextStyle] directly rather than wrapping a [Text] (e.g. `TextField.style`,
+/// `InputDecoration.hintStyle`), where [FontSizeExtensions] doesn't apply.
+extension TextStyleFontSizeExtensions on TextStyle {
+  /// font-size: 12px, line-height: 1/0.75 ≈ 1.333. Tailwind: `text-xs`.
+  TextStyle textXs() => merge(TextStyle(fontSize: 12, height: 1 / 0.75));
+
+  /// font-size: 14px, line-height: 1.25/0.875 ≈ 1.429. Tailwind: `text-sm`.
+  TextStyle textSm() => merge(TextStyle(fontSize: 14, height: 1.25 / 0.875));
+
+  /// font-size: 16px, line-height: 1.5. Tailwind: `text-base`.
+  TextStyle textBase() => merge(const TextStyle(fontSize: 16, height: 1.5));
+
+  /// font-size: 18px, line-height: 1.75/1.125 ≈ 1.556. Tailwind: `text-lg`.
+  TextStyle textLg() => merge(TextStyle(fontSize: 18, height: 1.75 / 1.125));
+
+  /// font-size: 20px, line-height: 1.75/1.25 = 1.4. Tailwind: `text-xl`.
+  TextStyle textXl() => merge(const TextStyle(fontSize: 20, height: 1.4));
+
+  /// font-size: 24px, line-height: 2/1.5 ≈ 1.333. Tailwind: `text-2xl`.
+  TextStyle text2Xl() => merge(TextStyle(fontSize: 24, height: 2 / 1.5));
+
+  /// font-size: 30px, line-height: 2.25/1.875 = 1.2. Tailwind: `text-3xl`.
+  TextStyle text3Xl() => merge(const TextStyle(fontSize: 30, height: 1.2));
+
+  /// font-size: 36px, line-height: 2.5/2.25 ≈ 1.111. Tailwind: `text-4xl`.
+  TextStyle text4Xl() => merge(TextStyle(fontSize: 36, height: 2.5 / 2.25));
+
+  /// font-size: 48px, line-height: 1. Tailwind: `text-5xl`.
+  TextStyle text5Xl() => merge(const TextStyle(fontSize: 48, height: 1));
+
+  /// font-size: 60px, line-height: 1. Tailwind: `text-6xl`.
+  TextStyle text6Xl() => merge(const TextStyle(fontSize: 60, height: 1));
+
+  /// font-size: 72px, line-height: 1. Tailwind: `text-7xl`.
+  TextStyle text7Xl() => merge(const TextStyle(fontSize: 72, height: 1));
+
+  /// font-size: 96px, line-height: 1. Tailwind: `text-8xl`.
+  TextStyle text8Xl() => merge(const TextStyle(fontSize: 96, height: 1));
+
+  /// font-size: 128px, line-height: 1. Tailwind: `text-9xl`.
+  TextStyle text9Xl() => merge(const TextStyle(fontSize: 128, height: 1));
+}

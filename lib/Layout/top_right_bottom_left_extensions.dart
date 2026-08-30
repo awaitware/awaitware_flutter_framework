@@ -20,17 +20,39 @@ import 'package:flutter/widgets.dart';
 /// [inset] are the generic escape hatches if you need an arbitrary or
 /// computed value.
 extension TopRightBottomLeftExtensions on Widget {
+  /// Merges into `this` if it's already a [Positioned] instead of wrapping
+  /// it in a second one — chains like `.bottom4().left4()` (mirroring CSS
+  /// `bottom-4 left-4`) would otherwise nest two [Positioned] widgets
+  /// directly on top of each other, and Flutter throws "Incorrect use of
+  /// ParentDataWidget" when two [ParentDataWidget]s of the same type both
+  /// try to write to the same descendant [RenderObject].
+  Widget _positioned({double? top, double? right, double? bottom, double? left}) {
+    final self = this;
+    if (self is Positioned) {
+      return Positioned(
+        top: top ?? self.top,
+        right: right ?? self.right,
+        bottom: bottom ?? self.bottom,
+        left: left ?? self.left,
+        width: self.width,
+        height: self.height,
+        child: self.child,
+      );
+    }
+    return Positioned(top: top, right: right, bottom: bottom, left: left, child: self);
+  }
+
   /// Tailwind: `top-<n>`.
-  Widget top(double px) => Positioned(top: px, child: this);
+  Widget top(double px) => _positioned(top: px);
 
   /// Tailwind: `right-<n>`.
-  Widget right(double px) => Positioned(right: px, child: this);
+  Widget right(double px) => _positioned(right: px);
 
   /// Tailwind: `bottom-<n>`.
-  Widget bottom(double px) => Positioned(bottom: px, child: this);
+  Widget bottom(double px) => _positioned(bottom: px);
 
   /// Tailwind: `left-<n>`.
-  Widget left(double px) => Positioned(left: px, child: this);
+  Widget left(double px) => _positioned(left: px);
 
   /// Direction-aware start (LTR: left, RTL: right). Tailwind: `start-<n>`.
   Widget start(double px) => PositionedDirectional(start: px, child: this);
@@ -39,14 +61,13 @@ extension TopRightBottomLeftExtensions on Widget {
   Widget end(double px) => PositionedDirectional(end: px, child: this);
 
   /// Sets left and right together. Tailwind: `inset-x-<n>`.
-  Widget insetX(double px) => Positioned(left: px, right: px, child: this);
+  Widget insetX(double px) => _positioned(left: px, right: px);
 
   /// Sets top and bottom together. Tailwind: `inset-y-<n>`.
-  Widget insetY(double px) => Positioned(top: px, bottom: px, child: this);
+  Widget insetY(double px) => _positioned(top: px, bottom: px);
 
   /// Sets all four sides together. Tailwind: `inset-<n>`.
-  Widget inset(double px) =>
-      Positioned(top: px, right: px, bottom: px, left: px, child: this);
+  Widget inset(double px) => _positioned(top: px, right: px, bottom: px, left: px);
 
   // ==================== TOP ====================
 

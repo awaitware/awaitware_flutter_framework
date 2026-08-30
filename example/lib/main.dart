@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:awaitware_flutter_framework/awaitware_flutter_framework.dart';
 
+import 'login_page.dart';
+
 /// Playground app for `awaitware_flutter_framework` — the Flutter/Dart
 /// equivalent of Tailwind's own https://play.tailwindcss.com/: a running,
 /// interactive demo you can read top to bottom to see real chains from
@@ -26,7 +28,7 @@ class PlaygroundApp extends StatelessWidget {
           useMaterial3: true,
         ),
       ),
-      home: const PlaygroundHomePage(title: 'Awaitware Flutter Framework — Playground'),
+      home: const LoginPage(),
     );
   }
 }
@@ -39,7 +41,18 @@ class PlaygroundHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(title)),
+      appBar: AppBar(
+        title: Text(title),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.login),
+            tooltip: 'Login page example',
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const LoginPage()),
+            ),
+          ),
+        ],
+      ),
       body: Column(
         children: [
           Expanded(

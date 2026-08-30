@@ -7,3 +7,4 @@ build/
 .pub/
 *.iml
 *.log
+/pubspec.lock

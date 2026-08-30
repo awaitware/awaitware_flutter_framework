@@ -28,6 +28,10 @@
 /// - **BaseStyles** — `preflightTheme()`, an app-root `ThemeData` helper
 /// - **CoreConcepts** — `.states(...)` (hover/focus/active/disabled),
 ///   `context.responsive(...)`, `context.darkMode(...)`
+/// - **Components** — not a Tailwind doc category; chainable
+///   [InputDecoration] styling for [TextFormField]/[TextField], the one
+///   widget in Flutter whose chrome none of the [Text]/[Widget]-based
+///   extensions above can reach (see that folder's barrel file doc comment)
 ///
 /// Every category's own barrel file documents, in detail, which of its
 /// methods are a faithful 1:1 mapping to the Tailwind property, which are
@@ -53,3 +57,4 @@ export 'SVG/svg.dart';
 export 'Accessibility/accessibility.dart';
 export 'BaseStyles/base_styles.dart';
 export 'CoreConcepts/core_concepts.dart';
+export 'Components/components.dart';
