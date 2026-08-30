@@ -1,5 +1,3 @@
-import 'transform_origin_extensions.dart';
-
 /// Tailwind CSS-inspired `perspective-origin` values for Flutter.
 ///
 /// Docs: https://tailwindcss.com/docs/perspective-origin

@@ -1,10 +1,8 @@
 name: awaitware_flutter_framework
 description: "A Tailwind CSS-inspired chainable extension-method toolkit for Flutter, covering every Tailwind utility category."
-# Remove this line (and fill in homepage/repository below) before running
-# `dart pub publish` for real — left in so this package can't be published
-# by accident.
-publish_to: 'none'
 version: 0.1.0
+homepage: https://github.com/awaitware/awaitware_flutter_framework
+repository: https://github.com/awaitware/awaitware_flutter_framework
 
 environment:
   sdk: ^3.9.2
