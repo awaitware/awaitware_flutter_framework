@@ -1,6 +1,6 @@
 name: awaitware_flutter_framework
 description: "A Tailwind CSS-inspired chainable extension-method toolkit for Flutter, covering every Tailwind utility category."
-version: 0.1.0
+version: 0.1.1
 homepage: https://github.com/awaitware/awaitware_flutter_framework
 repository: https://github.com/awaitware/awaitware_flutter_framework
 

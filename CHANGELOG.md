@@ -5,7 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.1.0] - Unreleased
+## [0.1.1] - 2026-08-30
+
+### Added
+
+- **Components** — new category, not a Tailwind doc page: chainable
+  `InputDecoration` styling for `TextFormField`/`TextField`
+  (`roundedLg()`, `focusBorderColor()`, `bg()`, `paddingAll()`,
+  `paddingSymmetric()`, `dense()`), since that widget takes its chrome as one
+  `InputDecoration` built up front rather than a `Text`/`Widget` the rest of
+  this package's extensions can reach
+- **Typography** — `TextStyleFontSizeExtensions`, the same `text-xs`…`text-9xl`
+  scale as the existing `Text`-based `FontSizeExtensions`, but for raw
+  `TextStyle` values (`TextField.style`, `InputDecoration.hintStyle`, and any
+  other spot that takes a `TextStyle` directly)
+
+### Fixed
+
+- **Layout** — `top()`/`right()`/`bottom()`/`left()`/`insetX()`/`insetY()`/
+  `inset()` now merge into an existing `Positioned` instead of nesting a new
+  one. Chaining two of them (e.g. `.bottom4().left4()`, mirroring CSS
+  `bottom-4 left-4`) previously nested two `Positioned` widgets and crashed
+  with "Incorrect use of ParentDataWidget" at runtime.
+
+## [0.1.0] - 2026-08-30
 
 ### Added
 
