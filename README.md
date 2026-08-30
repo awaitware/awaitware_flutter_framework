@@ -1,6 +1,6 @@
 # Awaitware Flutter Framework
 
-A Tailwind CSS-inspired chainable extension-method toolkit for Flutter. Every Tailwind utility doc page has a corresponding Dart file — see [`lib/awaitware_flutter_framework.dart`](lib/awaitware_flutter_framework.dart) for the full category list. Want to see it running rather than read about it? See [`example/`](example/) — the Playground.
+A Tailwind CSS-inspired chainable extension-method toolkit for Flutter. Every Tailwind utility doc page has a corresponding Dart file — see [`lib/awaitware_flutter_framework.dart`](lib/awaitware_flutter_framework.dart) for the full category list. Want to see it running rather than read about it? See [`example/`](example/) — a login screen built entirely with these chains.
 
 ```dart
 Text('Hello')
@@ -16,26 +16,21 @@ Text('Hello')
 
 ### Installation
 
-This package isn't published to [pub.dev](https://pub.dev/) yet — `publish_to: 'none'` in `pubspec.yaml` is left in deliberately so it can't be published by accident. Once it is, installation will be the standard pub.dev flow:
-
-```yaml
-dependencies:
-  awaitware_flutter_framework: ^0.1.0
-```
+Published on [pub.dev](https://pub.dev/packages/awaitware_flutter_framework):
 
 ```bash
-flutter pub get
+flutter pub add awaitware_flutter_framework
 ```
 
 ```dart
 import 'package:awaitware_flutter_framework/awaitware_flutter_framework.dart';
 ```
 
-Until then, use it locally the way [`example/`](example/) does — a [path dependency](https://dart.dev/tools/pub/dependencies) (`awaitware_flutter_framework: {path: ../}`) — or just copy the category folders you need out of `lib/`.
+Working from a clone of this repo instead? Use it locally the way [`example/`](example/) does — a [path dependency](https://dart.dev/tools/pub/dependencies) (`awaitware_flutter_framework: {path: ../}`) — or just copy the category folders you need out of `lib/`.
 
-### Playground
+### Example
 
-[`example/`](example/) is a full runnable app — the Flutter equivalent of Tailwind's own [play.tailwindcss.com](https://play.tailwindcss.com/): one screen exercising real chains from most of the library's categories together, not an isolated snippet.
+[`example/`](example/) is a full runnable app — a login screen built with real chains from this library, including the `Components` category's `InputDecoration` styling for the email/password fields (`lib/login_page.dart`).
 
 ```bash
 cd example
@@ -56,7 +51,7 @@ Nothing to install. Tailwind's own [editor setup](https://tailwindcss.com/docs/e
 
 ### Upgrade Guide
 
-Nothing to upgrade from yet — this is the `0.1.0` initial build. See [`CHANGELOG.md`](CHANGELOG.md), which will carry migration notes for any breaking change in a future release, the same role Tailwind's own [upgrade guide](https://tailwindcss.com/docs/upgrade-guide) plays for theirs.
+See [`CHANGELOG.md`](CHANGELOG.md), which carries migration notes for any breaking change, the same role Tailwind's own [upgrade guide](https://tailwindcss.com/docs/upgrade-guide) plays for theirs.
 
 ## Honesty, not just coverage
 
